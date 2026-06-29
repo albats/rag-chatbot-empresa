@@ -75,21 +75,3 @@ El archivo `main.py` contiene la interfaz CLI, validación de la variable `OPENA
 ## Restricción de respuesta documental
 
 El prompt del chatbot indica que las respuestas deben basarse únicamente en el contexto recuperado de los documentos procesados. Si los fragmentos recuperados no contienen información suficiente, el chatbot debe indicarlo en lugar de inventar información.
-
-## Criterios cubiertos
-
-### Implementación de embeddings
-
-El proyecto utiliza `OpenAIEmbeddings` con el modelo `text-embedding-3-small`, procesa documentos Markdown y almacena los embeddings en `InMemoryVectorStore`.
-
-### Retrieval
-
-El método `retrieve` ejecuta búsqueda por similitud sobre el vector store en memoria y devuelve los fragmentos más relevantes para la consulta.
-
-### Chatbot conversacional
-
-La clase `Chatbot` mantiene historial de sesión, integra el contexto recuperado en el prompt y genera respuestas con un modelo de OpenAI.
-
-### CLI y flujo completo
-
-La aplicación incluye una interfaz de línea de comandos con inicialización, conversación interactiva, comandos de salida y manejo básico de errores.
